@@ -9,10 +9,12 @@ class App extends React.Component {
     this.state = {
       events: [],
       search: '',
+      searched: '',
     }
 
     this.searchEvents = this.searchEvents.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -21,10 +23,14 @@ class App extends React.Component {
 
     // GET DATA
   searchEvents(search) {
-    axios.get(`/events`)
+    axios.get(`/events`, {
+      params: {
+        q: search
+      }
+    })
       .then((response) => {
         // console.log(response.data);
-        this.setState({ data: response.data });
+        this.setState({ data: response.data, searched: search });
       })
       .catch((err) => {
         console.log(err);
@@ -39,9 +45,10 @@ class App extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log('testing submit')
+    // console.log('testing submit')
     event.preventDefault();
-    // this.searchEvents(search);
+    var search = this.state.search;
+    this.searchEvents(search);
   }
 
   render() {
