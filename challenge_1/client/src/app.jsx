@@ -23,7 +23,7 @@ class App extends React.Component {
     this.searchEvents('');
   }
 
-    // GET DATA
+  // GET DATA
   searchEvents(search) {
     axios.get(`/events`, {
       params: {
@@ -54,6 +54,10 @@ class App extends React.Component {
     this.searchEvents(search);
   }
 
+  handlePageClick(event) {
+    // this.searchEvents(this.state.search);
+    // little confused here
+  }
   render() {
     return (
       <div>

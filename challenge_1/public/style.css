@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap');
 
 #react-paginate ul {
-    display: inline-block;
-    padding-left: 15px;
-    padding-right: 15px;
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 15px;
+
 }
 
 #react-paginate li {
-    display: inline-block;
+  display: inline-block;
 }
-
 
 h1, h2, form {
   text-align: center;
@@ -17,7 +17,6 @@ h1, h2, form {
 }
 
 body {
-
   font-family: 'Libre Franklin';
   margin: 0;
   padding: 0;
