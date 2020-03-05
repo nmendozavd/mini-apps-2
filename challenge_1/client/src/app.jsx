@@ -7,21 +7,23 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      events: []
+      events: [],
+      search: '',
     }
 
-    this.getEvents = this.getEvents.bind(this);
+    this.searchEvents = this.searchEvents.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
-    this.getEvents();
+    this.searchEvents();
   }
 
     // GET DATA
-  getEvents() {
+  searchEvents(search) {
     axios.get(`/events`)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         this.setState({ data: response.data });
       })
       .catch((err) => {
@@ -29,9 +31,29 @@ class App extends React.Component {
       });
   }
 
+  handleChange(event){
+    //console.log('testing change')
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  handleSubmit(event) {
+    console.log('testing submit')
+    event.preventDefault();
+    // this.searchEvents(search);
+  }
+
   render() {
     return (
-      <div>Hello World</div>
+      <div>
+        <h1>Historical Event Finder</h1>
+        <br></br>
+        <form onSubmit={this.handleSubmit}>
+          <label>Search Events:</label> <input type='text' name='search' onChange={this.handleChange}/>
+          <input type='submit' value= 'Search'/>
+        </form>
+      </div>
     )
   }
 }
