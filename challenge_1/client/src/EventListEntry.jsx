@@ -3,10 +3,10 @@ import React from 'react';
 function EventListEntry( {eventEntry} ) {
   return (
     <div>
-      <div>Date: {eventEntry.date}</div>
-      <div>Description: {eventEntry.description}</div>
-      <div>Category 1: {eventEntry.category1}</div>
-      <div>Category 2: {eventEntry.category2}</div>
+      <div><strong>Date:</strong>{eventEntry.date}</div>
+      <div><strong>Category: </strong>{eventEntry.category1}</div>
+      <div><strong>Location: </strong>{eventEntry.category2}</div>
+      <div><strong>Description: </strong>{eventEntry.description}</div>
       <br/>
     </div>
   );
