@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import ReactPaginate from 'react-paginate';
+import EventList from './EventList.jsx';
 
 
 class App extends React.Component {
@@ -9,7 +11,7 @@ class App extends React.Component {
     this.state = {
       events: [],
       search: '',
-      searched: '',
+      pageCount: 10
     }
 
     this.searchEvents = this.searchEvents.bind(this);
@@ -18,19 +20,20 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.searchEvents();
+    this.searchEvents('');
   }
 
     // GET DATA
   searchEvents(search) {
     axios.get(`/events`, {
       params: {
-        q: search
+        q: search,
+        _limit: 10
       }
     })
       .then((response) => {
         // console.log(response.data);
-        this.setState({ data: response.data, searched: search });
+        this.setState({ events: response.data });
       })
       .catch((err) => {
         console.log(err);
@@ -60,6 +63,24 @@ class App extends React.Component {
           <label>Search Events:</label> <input type='text' name='search' onChange={this.handleChange}/>
           <input type='submit' value= 'Search'/>
         </form>
+        <h2>Event List</h2>
+        <EventList events={this.state.events} />
+        <div id="react-paginate">
+          <ReactPaginate
+            previousLabel={'previous'}
+            nextLabel={'next'}
+            breakLabel={'...'}
+            breakClassName={'break-me'}
+            pageCount={this.state.pageCount}
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={5}
+            onPageChange={this.handlePageClick}
+            containerClassName={'pagination'}
+            subContainerClassName={'pages pagination'}
+            activeClassName={'active'}
+          />
+        </div>
+
       </div>
     )
   }
