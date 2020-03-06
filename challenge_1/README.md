@@ -14,3 +14,13 @@ For basic requirements, you are going to ignore this messiness at the server lay
 Build a React UI that allows the user to search for historical events based on a keyword. Use the full-text search features of json-server to return a result to the UI for browsing. Paginate the list of events using react-paginate, loading no more than ten at a time. Ensure you are implementing server-side pagination  NOT client-side pagination.
 
 Reminder: emphasis should be placed on creating well-defined interfaces, writing code with a clear separation of concerns, and using the principles of modularity, encapsulation, abstraction.
+
+## Advanced Content
+* That data is messy! Add an edit button on the UI to allow the historical event information to be edited. Allow those edits to be saved back to the server using a save button.
+
+* Add the feature of "Favoriting" a historical event: when the user favorites an event, they are prompted for a "Favorite Set". The user may select an already existing "Favorite Set" or may wish to create a new "Favorite Set." What's a Favorite Set? Instead of having only one set of favorites, some sites (like Airbnb) allow users to create many sets of favorites, where each set has a unique name. For example, a user might favorite some events into "War Story" favorites and others into "Science Story" favorites.
+
+* Use react-router to navigate throughout the app. Allow the user to navigate to a page where they can see all of their Favorite Sets and another page to see all the events of a selected Favorite Set. Don't forget to let the user navigate back to the search page.
+
+## Nightmare Mode
+* Replace json-server with your own server, created using Express+MongoDB
