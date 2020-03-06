@@ -1,0 +1,41 @@
+{
+  "name": "challenge_2",
+  "version": "1.0.0",
+  "description": "Cryptocurrency Charting Tool",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "react-dev": "webpack -d --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackreactor/hrsf125-mini-apps-2.git"
+  },
+  "keywords": [
+    "react",
+    "express",
+    "chart.js",
+    "cryptocurrency"
+  ],
+  "author": "Noel Mendoza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hackreactor/hrsf125-mini-apps-2/issues"
+  },
+  "homepage": "https://github.com/hackreactor/hrsf125-mini-apps-2#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.23.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  }
+}
