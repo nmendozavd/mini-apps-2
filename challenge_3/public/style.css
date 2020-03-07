@@ -1,0 +1,21 @@
+.container {
+  font-family: 'Libre Franklin';
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Libre Franklin';
+  text-align: center;
+}
+
+
+#button {
+  font-size: 30px;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+  padding: 16px;
+}
+
+#button:hover {
+  background-color: #f44336;
+}
