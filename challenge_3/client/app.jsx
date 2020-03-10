@@ -41,7 +41,7 @@ class App extends React.Component {
       <img src="bowling.jpg" alt="bowling" height="250" width="350"/><br/>
       <h3>Frame # {this.state.frame}</h3>
       <h3>Current Score: {this.state.totalScore}</h3>
-      <p>Click Number of Pins knocked Down</p>
+      <p>Click on Number of Pins to Knock Down</p>
       <div className='keypad'>
         <input type="button" id="button" value="7" onClick={() => this.scoreHandler(7)}/>
         <input type="button" id="button" value="8" onClick={() => this.scoreHandler(8)}/>
